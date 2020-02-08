@@ -15,7 +15,8 @@ class Form {
     this.greeting.hide();
     this.button.hide();
     this.input.hide();
-  }
+    this.greeting.hide();
+    }
 
   display(){
     var title = createElement('h2')
@@ -32,7 +33,7 @@ class Form {
           q3.position(displayWidth/2-240,displayHeight/2+40); 
    var th = createElement('h2');
       th.html("Thanks for participating!");
-        th.position(displayWidth/2-240,displayHeight/2+140);      
+             
     this.yes1.position(displayWidth/2-200,displayHeight/2-140);     
     this.no1.position(displayWidth/2-200,displayHeight/2-110);
     this.yes2.position(displayWidth/2-200,displayHeight/2-30);     
@@ -46,14 +47,17 @@ class Form {
     this.button.mousePressed(()=>{
       this.input.hide();
       this.button.hide();
-      player.name = this.input.value();
+       player.name = this.input.value();
       playerCount+=1;
       player.index = playerCount;
       player.update();
       player.updateCount(playerCount);
       this.greeting.html("Your Email is now registered as - " + player.name)
       this.greeting.position(displayWidth/2-200,displayHeight/2-270);
+      
     });
+    
+    
       this.yes1.mousePressed(()=>{
         this.yes1.hide();
         this.no1.hide();
@@ -73,10 +77,30 @@ class Form {
       this.yes3.mousePressed(()=>{
         this.yes3.hide();
         this.no3.hide();
+        this.yes1.hide();
+        this.yes2.hide();
+        this.no2.hide();
+        this.no1.hide();
+        this.greeting.hide();
+        q1.hide();
+        q2.hide();
+        q3.hide();
+        th.show();
+        th.position(displayWidth/2-80,displayHeight/2-160); 
       });
       this.no3.mousePressed(()=>{
         this.yes3.hide();
         this.no3.hide();
+        this.yes1.hide();
+        this.yes2.hide();
+        this.no2.hide();
+        this.no1.hide();
+        this.greeting.hide();
+        q1.hide();
+        q2.hide();
+        q3.hide();
+        th.show();
+        th.position(displayWidth/2-80,displayHeight/2-160); 
       });
      
       
